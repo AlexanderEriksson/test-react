@@ -16,7 +16,7 @@ app.use('/user', userRoutes)
 app.use('/message', messageRoutes)
 
 
-const CONNECTION_URL = "mongodb+srv://AlexAndErik:wWAyfeNOpdLpOmi2@chatcluster.f2qvy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const CONNECTION_URL = "mongodb+srv://" + process.env.USERNAME + ":" + process.env.PASSWORD + "@chatcluster.f2qvy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(CONNECTION_URL, {
         useNewUrlParser: true,
