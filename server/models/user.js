@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const user = new mongoose.Schema({
     name:{
@@ -9,6 +9,10 @@ const user = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+    },
+    password: {
+        type: String,
+        required: true,
     },
     status: {
         type: Boolean,

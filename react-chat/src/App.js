@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
-
-
-import Form from './components/Form/Form';
-
-
+import React from 'react';
+import UserForm from './components/Form/UserForm.js';
 
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
-  const dispatch = useDispatch();
-  const classes = useStyles();
-  
-  return (
+      return (
         <div class='Container'>
-              <Messages setCurrentId={setCurrentId} /> //Messages history
-
-              <Form currentId={currentId} setCurrentId={setCurrentId} />  //Input box
+              <h1>ye</h1>
+              <UserForm></UserForm>
         </div>
-
   );
-};
-
+}
 export default App;

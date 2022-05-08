@@ -1,19 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-
 import Users from '../models/user.js';
 
-export const getUsers = (req, res) => {
+export const getUsers = async (req, res) => {
     try {
         const userdata = await Users.find()
-        console.log(userdata)
+        res.send(userdata)
     } catch (error) {
         console.log(error.message);
     }
 }
 
-export const createUser = (req, res) => {
+export const createUser = async (req, res) => {
     const newUser = new Users(req.body);
+    console.log(newUser)
     try {
         await newUser.save()
         res.status(201).json(newUser);

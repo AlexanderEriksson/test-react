@@ -1,9 +1,6 @@
-const express = require('express');
-const mongoose = require('mongoose');
-
 import Messages from '../models/user.js';
 
-export const getMessages = (req, res) => {
+export const getMessages = async (req, res) => {
     try {
         const messagedata = await Messages.find()
         console.log(messagedata)
@@ -12,7 +9,7 @@ export const getMessages = (req, res) => {
     }
 }
 
-export const createMessage = (req, res) => {
+export const createMessage = async (req, res) => {
     const newMessage = new Messages(req.body);
     try {
         await newMessage.save()
